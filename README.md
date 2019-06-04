@@ -5,7 +5,8 @@ This is a rudimentary starter for [Svelte](https://svelte.dev) in Adobe [CEP](ht
 *NOTE: This is still in progress; it's buggy and lacks major features*
 
 ## Todo
-- [ ] Support Extendscript
+- [x] Support Extendscript
+- [x] Include [Spectrum](https://github.com/adobe/spectrum-css)
 - [ ] Extract CSS from `.svelte` files
 - [ ] Much more…
 

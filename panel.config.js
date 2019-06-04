@@ -8,7 +8,7 @@ const dest = path.join(__dirname, 'dist')
 const config = createConfig({
 	type: 'cep',
 	id: 'cep.svelte.webpack',
-	entry: './src/main.js',
+	entry: './src/app/main.js',
 	out: dest,
 	isDev: isDev,
 	devPort: 8080,

@@ -1,12 +1,14 @@
 {
   "name": "svelte-app",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "private": true,
   "scripts": {
     "start": "export IS_DEV=1 && npm-run-all --parallel watch:**",
     "watch:cep": "webpack-dev-server --config panel.config.js",
+    "watch:extendscript": "webpack --config extendscript.config.js --watch",
     "build": "npm-run-all --serial build:**",
-    "build:cep": "webpack --config cep.config.js --display verbose"
+    "build:cep": "webpack --config panel.config.js --display verbose",
+    "build:extendscript": "webpack --config extendscript.config.js --display verbose"
   },
   "cep": {
     "name": "Svelte Starter",
@@ -43,5 +45,8 @@
     "webpack": "^4.30.0",
     "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^3.3.1"
+  },
+  "dependencies": {
+    "@adobe/spectrum-css": "^2.12.0"
   }
 }
