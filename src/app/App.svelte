@@ -1,6 +1,6 @@
 <svelte:head>
-	<link rel="stylesheet" href="/node_modules/@adobe/spectrum-css/dist/spectrum-core.css">
-	<link rel="stylesheet" href="/node_modules/@adobe/spectrum-css/dist/spectrum-darkest.css">
+	<link rel="stylesheet" href="./node_modules/@adobe/spectrum-css/dist/spectrum-core.css">
+	<link rel="stylesheet" href="./node_modules/@adobe/spectrum-css/dist/spectrum-darkest.css">
 	<style>
 		* {
 			padding: 0;
