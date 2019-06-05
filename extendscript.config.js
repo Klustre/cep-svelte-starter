@@ -5,7 +5,7 @@ const config = createConfig({
 	out: path.join(__dirname, 'dist'),
 	type: 'extendscript',
 	entry: './src/extendscript/main.js',
-	isDev: !!process.env.IS_DEV,
+	isDev: process.env.IS_DEV === '1',
 })
 
 module.exports = config
