@@ -34,7 +34,7 @@
     ]
   },
   "devDependencies": {
-    "cep-bundler-webpack": "0.0.56",
+    "cep-bundler-webpack": "0.0.57",
     "cep-interface": "^0.5.1",
     "cross-env": "^5.2.0",
     "css-loader": "^2.1.1",
