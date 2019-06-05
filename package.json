@@ -2,6 +2,7 @@
   "name": "svelte-app",
   "version": "0.0.2",
   "private": true,
+  "license": "MIT",
   "scripts": {
     "start": "export IS_DEV=1 && npm-run-all --parallel watch:**",
     "watch:cep": "webpack-dev-server --config panel.config.js",
