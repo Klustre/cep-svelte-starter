@@ -5,10 +5,18 @@
 </svelte:head>
 
 <script>
+	import { time, elapsed, prefix } from './store.js'
 	import * as csInterface from 'cep-interface'
 	import * as pkg from '../../package.json'
 
 	export let name
+
+	const formatter = new Intl.DateTimeFormat('en', {
+		hour12: true,
+		hour: 'numeric',
+		minute: '2-digit',
+		second: '2-digit'
+	})
 
 	function helloExtendscript() {
 		const host = `$.global["${pkg.cep.id}"]`
@@ -25,12 +33,26 @@
 	function helloSpectrum() {
 		alert('Spectrum with icons \\o/')
 	}
+	
 </script>
 
 <main class="spectrum spectrum--darkest">
-	<h1>Hello {name}!</h1>
-
+	<h1>Hello {$prefix} {name}!</h1>
+	<input type="text" placeholder="Prefix" name="field" bind:value={$prefix} class="spectrum-Textfield spectrum-Textfield--quiet">
 	<input type="text" placeholder="Enter your name" name="field" bind:value={name} class="spectrum-Textfield spectrum-Textfield--quiet">
+
+	<h3>The time is {formatter.format($time)}</h3>
+
+	<p>
+		The panel has been open for {$elapsed} {$elapsed === 1 ? 'second' : 'seconds'}
+	</p>
+
+	<button class="spectrum-ActionButton spectrum-ActionButton--quiet" on:click={helloSpectrum}>
+      <svg class="spectrum-Icon spectrum-Icon--sizeS" focusable="false" aria-hidden="true" aria-label="Info">
+        <use href="#spectrum-css-icon-InfoMedium" />
+      <span class="spectrum-ActionButton-label">Info</span>
+      </svg>
+	</button>
 
 	<button class="spectrum-ActionButton" on:click={helloExtendscript}>
 		<span class="spectrum-ActionButton-label">Hello Extendscript</span>
@@ -38,13 +60,6 @@
 
 	<button class="spectrum-ActionButton" on:click={helloNode}>
 		<span class="spectrum-ActionButton-label">Hello Node</span>
-	</button>
-	
-	<button class="spectrum-ActionButton spectrum-ActionButton--quiet" on:click={helloSpectrum}>
-      <svg class="spectrum-Icon spectrum-Icon--sizeS" focusable="false" aria-hidden="true" aria-label="Info">
-        <use href="#spectrum-css-icon-InfoMedium" />
-      <span class="spectrum-ActionButton-label">Info</span>
-      </svg>
 	</button>
 </main>
 
@@ -61,7 +76,7 @@
 		padding: 50px;
 	}
 
-	input {
+	input, p {
 		margin-bottom: 20px;
 	}
 </style>
