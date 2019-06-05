@@ -5,11 +5,11 @@
   "license": "MIT",
   "scripts": {
     "start": "export IS_DEV=1 && npm-run-all --parallel watch:**",
-    "watch:cep": "webpack-dev-server --config panel.config.js",
     "watch:extendscript": "webpack --config extendscript.config.js --watch",
+    "watch:cep": "sleep 5 && webpack-dev-server --config panel.config.js",
     "build": "npm-run-all --serial build:**",
-    "build:cep": "webpack --config panel.config.js --display verbose",
-    "build:extendscript": "webpack --config extendscript.config.js --display verbose"
+    "build:extendscript": "webpack --config extendscript.config.js --display verbose",
+    "build:cep": "webpack --config panel.config.js --display verbose"
   },
   "cep": {
     "name": "Svelte Starter",
@@ -34,7 +34,7 @@
     ]
   },
   "devDependencies": {
-    "cep-bundler-webpack": "0.0.56",
+    "cep-bundler-webpack": "0.0.58",
     "cep-interface": "^0.5.1",
     "cross-env": "^5.2.0",
     "css-loader": "^2.1.1",
