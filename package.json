@@ -8,8 +8,8 @@
     "watch:cep": "webpack-dev-server --config panel.config.js",
     "watch:extendscript": "webpack --config extendscript.config.js --watch",
     "build": "npm-run-all --serial build:**",
-    "build:cep": "webpack --config panel.config.js --display verbose",
-    "build:extendscript": "webpack --config extendscript.config.js --display verbose"
+    "build:extendscript": "webpack --config extendscript.config.js --display verbose",
+    "build:cep": "webpack --config panel.config.js --display verbose"
   },
   "cep": {
     "name": "Svelte Starter",
