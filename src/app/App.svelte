@@ -27,6 +27,13 @@
 	<button class="spectrum-ActionButton" on:click={helloNode}>
 		<span class="spectrum-ActionButton-label">Hello Node</span>
 	</button>
+	
+	<button class="spectrum-ActionButton spectrum-ActionButton--quiet" on:click={helloSpectrum}>
+      <svg class="spectrum-Icon spectrum-Icon--sizeS" focusable="false" aria-hidden="true" aria-label="Info">
+        <use href="#spectrum-css-icon-InfoMedium" />
+      <span class="spectrum-ActionButton-label">Info</span>
+      </svg>
+    </button>
 </main>
 
 <script>
@@ -45,6 +52,10 @@
 		const os = require('os')
 		const user = os.userInfo().username
 		alert(`Hello from Node, ${user}`)
+	}
+
+	function helloSpectrum() {
+		alert('Spectrum with icons \\o/')
 	}
 </script>
 
