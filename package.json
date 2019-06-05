@@ -1,6 +1,6 @@
 {
   "name": "svelte-app",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": true,
   "license": "MIT",
   "scripts": {
@@ -21,7 +21,7 @@
         "name": "___ svelte starter",
         "id": "cep.svelte.webpack.panel",
         "devPort": 8080,
-        "htmlFilename": "./panel.html",
+        "htmlFilename": "./index.html",
         "panelWidth": 840,
         "panelHeight": 600,
         "cefParams": [

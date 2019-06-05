@@ -1,13 +1,13 @@
 # CEP Svelte Starter
 
-This is a rudimentary starter for [Svelte](https://svelte.dev) in Adobe [CEP](https://github.com/Adobe-CEP/CEP-Resources) using [Webpack](https://github.com/webpack/webpack).
+This is a rudimentary starter for [Svelte](https://svelte.dev) in Adobe [CEP](https://github.com/Adobe-CEP/CEP-Resources) using [Webpack](https://github.com/webpack/webpack). Huge thanks to [Koen Schmeets](https://github.com/vespakoen) for helping out with Webpack.
 
 *NOTE: This is still in progress; it's buggy and lacks major features*
 
 ## Todo
 - [x] Support Extendscript
 - [x] Include [Spectrum](https://github.com/adobe/spectrum-css)
-- [ ] Extract CSS from `.svelte` files
+- [x] Extract CSS from `.svelte` files
 - [ ] Much more…
 
 ## Getting Started
