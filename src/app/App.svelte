@@ -8,6 +8,7 @@
 	import { time, elapsed, prefix } from './store.js'
 	import * as csInterface from 'cep-interface'
 	import * as pkg from '../../package.json'
+	import Say from '../components/Say.svelte'
 
 	export let name
 
@@ -37,6 +38,7 @@
 </script>
 
 <main class="spectrum spectrum--darkest">
+	<Say value="Oh" />
 	<h1>Hello {$prefix} {name}!</h1>
 	<input type="text" placeholder="Prefix" name="field" bind:value={$prefix} class="spectrum-Textfield spectrum-Textfield--quiet">
 	<input type="text" placeholder="Enter your name" name="field" bind:value={name} class="spectrum-Textfield spectrum-Textfield--quiet">

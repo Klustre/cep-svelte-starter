@@ -16,7 +16,7 @@ The bundler will automatically listen for changes and compile. It adds a symlink
 - [x] Include [Spectrum](https://github.com/adobe/spectrum-css)
 - [x] Extract CSS from `.svelte` files
 - [x] Show Svelte features
-- [ ] Add example components
+- [x] Add example component
 - [ ] Improve readme
 
 ## Main Dependencies
