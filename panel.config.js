@@ -21,10 +21,12 @@ config.module.rules = [
 	{
 		test: /\.(png|svg|jpg|gif)$/,
 		use: ['file-loader']
-	}, {
+	}, 
+	{
 		test: /\.(woff|woff2|eot|ttf|otf)$/,
 		use: ['file-loader']
-	}, {
+	}, 
+	{
 		test: /\.(html|svelte)$/,
 		exclude: /node_modules/,
 		use: {
@@ -34,12 +36,21 @@ config.module.rules = [
 				hotReload: true
 			}
 		}
-	}, {
+	}, 
+	{
 		test: /\.css$/,
 		use: [
 			!isDev ? MiniCssExtractPlugin.loader : 'style-loader',
 			'css-loader'
 		]
+	},
+	{
+		// Fixes reexport errors when importing Svelte methods
+		// i.e. `onMount`, `createEventDispatcher`, etc
+		// -> `Can't reexport the named export 'XYZ' from non EcmaScript module`
+		test: /\.mjs$/,
+		include: /node_modules/,
+		type: 'javascript/auto'
 	}
 ]
 
