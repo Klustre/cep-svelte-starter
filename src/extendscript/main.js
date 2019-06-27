@@ -4,10 +4,7 @@ function showAlert() {
 }
 
 function appName() {
-	var name = BridgeTalk.appName
-	if (name === 'aftereffects') return 'AEFT'
-	if (name === 'premierepro') return 'PPRO'
-	throw new Error('Unsupported App')
+	return BridgeTalk.appName
 }
 
 $.global[process.env.npm_package_cep_id] = {
