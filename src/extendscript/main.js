@@ -10,7 +10,7 @@ function appName() {
 	throw new Error('Unsupported App')
 }
 
-$.global['cep.svelte.webpack'] = {
+$.global[process.env.npm_package_cep_id] = {
 	showAlert: showAlert,
 	appName: appName,
 }
