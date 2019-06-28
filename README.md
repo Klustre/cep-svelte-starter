@@ -46,7 +46,6 @@ Find the extension under `Window > Extensions` and start developing 👍
 1. On Windows you'll have to change:
     - `export IS_DEV=1` to `set IS_DEV=1`
     - `sleep 5` to `timeout 5`
-    - and the symlink to the windows extension folder `C:\Program Files (x86)\Common Files\Adobe\CEP\extensions\`
 
 1. Using any Svelte modules throws an error where the component is `undefined`. This is likely due to a double inclusion of `svelte/internal`.  
 
