@@ -4,8 +4,8 @@ This is a simple starter for [Svelte](https://svelte.dev) in Adobe [CEP](https:/
 
 # Features
 
-- Automatically generates `manifest.xml` and `.debug`
 - Bundles Extendscript, Javascript and Svelte code
+- Automatically generates `manifest.xml` and `.debug`
 - Supports multiple extensions in the extension bundle
 - Allows separate Extendscript files for each Adobe CC app
 - Includes Adobe's [Spectrum CSS](https://github.com/adobe/spectrum-css)
@@ -18,7 +18,7 @@ This is a simple starter for [Svelte](https://svelte.dev) in Adobe [CEP](https:/
 # Getting Started
 
 ### Clone the starter with [Degit](https://github.com/Rich-Harris/degit).
-This clones the repo without all the Git history.
+This clones the repo without the whole Git history.
 ```bash
 npx degit Klustre/cep-svelte-starter my-svelte-panel
 ```
@@ -35,7 +35,28 @@ npm start
 ```
 
 ### Open your favorite Adobe CC app
-And start developing 👍
+Find the extension under `Window > Extensions` and start developing 👍
+
+# Known Issues
+- Using Svelte animations throws an error: `TypeError: Illegal invocation`
+
+# Troubleshooting
+1. When running `npm start`, Webpack's dev server loads the files in memory instead of building to `/dist`. When you run `npm run build` it builds all files to `/dist`
+
+1. On Windows you'll have to change:
+    - `export IS_DEV=1` to `set IS_DEV=1`
+    - `sleep 5` to `timeout 5`
+    - and the symlink to the windows extension folder `C:\Program Files (x86)\Common Files\Adobe\CEP\extensions\`
+
+1. Using any Svelte modules throws an error where the component is `undefined`. This is likely due to a double inclusion of `svelte/internal`.  
+
+    Possible workarounds:
+    - **Import the module from `svelte/internal`**  
+    `import { createEventDispatcher } from 'svelte/internal'`
+    - **Remove the modules from Svelte after npm install**  
+    `"postinstall": "rimraf node_modules/svelte/*.mjs"`
+
+    *See https://github.com/sveltejs/svelte/issues/2896 and https://github.com/DeMoorJasper/parcel-plugin-svelte/issues/46#issuecomment-494556534*
 
 # Webpack and CEP-Bundler
 
@@ -46,13 +67,10 @@ The bundler automatically:
 - Copies Node `dependencies` to `/dist/node_modules`
 - Copies everything in `/public` to `/dist`
 
-*Learn more at [Webpack](https://github.com/webpack/webpack) and [cep-bundler-webpack](https://github.com/adobe-extension-tools/cep-bundler-webpack)*
+*Learn more at: [Webpack](https://github.com/webpack/webpack) and [cep-bundler-webpack](https://github.com/adobe-extension-tools/cep-bundler-webpack)*
 
 ## Configuring CEP-Bundler
 
 `panel.config.js` & `extendscript.config.js`
 
-TODO
-
-## Hot Module Replacement
-TODO
+*See [cep-bundler-core](https://github.com/adobe-extension-tools/cep-bundler-core)*
