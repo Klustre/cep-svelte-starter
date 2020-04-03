@@ -15,7 +15,10 @@ const config = createConfig({
 })
 
 config.resolve.mainFields = ['svelte', 'browser', 'module', 'main']
-config.resolve.extensions.concat(['.mjs', '.js', '.svelte'])
+config.resolve.extensions = ['.mjs', '.js', '.svelte']
+config.resolve.alias = {
+    svelte: path.resolve(__dirname, 'node_modules', 'svelte'),
+}
 
 config.module.rules = [
 	{
@@ -30,7 +33,7 @@ config.module.rules = [
 		test: /\.(html|svelte)$/,
 		exclude: /node_modules/,
 		use: {
-			loader: 'svelte-loader',
+			loader: 'svelte-loader-hot',
 			options: {
 				emitCss: true,
 				hotReload: true

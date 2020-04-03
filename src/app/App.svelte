@@ -6,12 +6,17 @@
 
 <script>
 	import { time, elapsed, prefix } from './store.js'
+	import { slide } from 'svelte/transition';
 	import * as csInterface from 'cep-interface'
 	import * as pkg from '../../package.json'
 	import Say from '../components/Say.svelte'
 
 	export let name
+	
+	let animate = false
 
+	const move = () => animate = !animate
+	
 	const formatter = new Intl.DateTimeFormat('en', {
 		hour12: true,
 		hour: 'numeric',
@@ -34,7 +39,6 @@
 	function helloSpectrum() {
 		alert('Spectrum with icons \\o/')
 	}
-	
 </script>
 
 <main class="spectrum spectrum--darkest">
@@ -63,6 +67,16 @@
 	<button class="spectrum-ActionButton" on:click={helloNode}>
 		<span class="spectrum-ActionButton-label">Hello Node</span>
 	</button>
+	
+	<button class="spectrum-ActionButton" on:click={move}>
+		<span class="spectrum-ActionButton-label">Animate</span>
+	</button>
+	
+	{#if animate}
+		<div id="slider" transition:slide>
+			¯\_(ツ)_/¯
+		</div>
+	{/if}
 </main>
 
 <style>
@@ -80,5 +94,15 @@
 
 	input, p {
 		margin-bottom: 20px;
+	}
+
+	#slider {
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 25px;
+		margin: 0 -50px;
+		background: darkslategray;
+		text-align: center;
 	}
 </style>
