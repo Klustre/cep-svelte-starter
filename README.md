@@ -73,3 +73,7 @@ The bundler automatically:
 `panel.config.js` & `extendscript.config.js`
 
 *See [cep-bundler-core](https://github.com/adobe-extension-tools/cep-bundler-core)*
+
+## Svelte VSCode Extension
+
+When you open the project in [VSCode](https://code.visualstudio.com/) it will prompt you to install the [Svelte extension](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode). This is the official Svelte language server which provides syntax highlighting and rich intellisense for Svelte components. To see the recommended extensions go to `Extensions > Views and More Actions (…) > Show Recommended Extensions`.
