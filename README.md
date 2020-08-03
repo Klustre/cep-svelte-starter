@@ -37,9 +37,6 @@ npm start
 ### Open your favorite Adobe CC app
 Find the extension under `Window > Extensions` and start developing 👍
 
-# Known Issues
-- Using Svelte animations throws an error: `TypeError: Illegal invocation`
-
 # Troubleshooting
 1. When running `npm start`, Webpack's dev server loads the files in memory instead of building to `/dist`. When you run `npm run build` it builds all files to `/dist`
 
